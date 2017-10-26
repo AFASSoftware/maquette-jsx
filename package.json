@@ -1,0 +1,23 @@
+{
+  "name": "maquette-jsx",
+  "version": "1.0.0",
+  "description": "A library to enable maquette to use jsx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AFASSoftware/maquette-jsx.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AFASSoftware/maquette-jsx/issues"
+  },
+  "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "maquette": "3.0.0-alpha.11"
+  }
+}

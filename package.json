@@ -4,7 +4,19 @@
   "description": "A library to enable maquette to use jsx",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "tsa clean && npm -s run dist",
+    "assist": "tsa assist",
+    "release": "tsa release",
+    "fix": "tsa fix",
+    "clean": "tsa clean",
+    "dist": "tsc -p ./src/tsconfig.json && rollup -c && uglifyjs ./dist/maquette-jsx.umd.js -c unsafe=true -m -o ./dist/maquette-jsx.umd.min.js",
+    "ci": "tsa ci",
+    "test": "tsa ci",
+    "coverage-show": "opn build/coverage/index.html",
+    "precommit": "tsa pre-commit",
+    "prepush": "npm run dist && tsa pre-push",
+    "postcheckout": "tsa post-checkout || exit 0",
+    "postmerge": "tsa post-merge || exit 0"
   },
   "repository": {
     "type": "git",
@@ -19,6 +31,8 @@
   "dependencies": {},
   "devDependencies": {
     "maquette": "3.0.0-alpha.11",
-    "typescript-assistant": "0.23.2"
+    "rollup": "0.50.0",
+    "typescript-assistant": "0.23.2",
+    "uglify-js": "3.1.5"
   }
 }

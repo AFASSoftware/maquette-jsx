@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
   "dependencies": {},
   "devDependencies": {
-    "maquette": "3.0.0-alpha.11"
+    "maquette": "3.0.0-alpha.11",
+    "typescript-assistant": "0.23.2"
   }
 }

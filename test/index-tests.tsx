@@ -47,12 +47,28 @@ describe('maquette-jsx', () => {
         expect(vnode).to.deep.equal(expected);
     });
 
-  it('creates VNodes from jsx code', () => {
+  it('creates VNodes from JSX code', () => {
     enableJsx();
     (global as any).jsx = window.jsx;
 
     let vnode = <a href="#">Click me</a>;
 
-    expect(vnode).to.deep.equal({});
+    expect(vnode).to.deep.equal({
+      children: [
+        {
+          children: undefined,
+          domNode: null,
+          properties: undefined,
+          text: 'Click me',
+          vnodeSelector: '',
+        }
+      ],
+      domNode: null,
+      properties: {
+        href: '#'
+      },
+      text: undefined,
+      vnodeSelector: 'a'
+    });
   });
 });

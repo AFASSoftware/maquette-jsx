@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2015",
+      "es6"
+    ],
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": false,
+    "strict": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "outDir": "./build/js",
+    "rootDir": ".",
+    "strictNullChecks": false,
+    "noEmit": true
+  },
+  "include": [
+    "./test/**/*.ts"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "./node_modules/typescript-assistant/tslint-afas.json"
+  ],
+  "rules": {
+  }
+}

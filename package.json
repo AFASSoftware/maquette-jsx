@@ -31,12 +31,59 @@
     "url": "https://github.com/AFASSoftware/maquette-jsx/issues"
   },
   "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
-  "dependencies": {},
+  "peerDependencies": {
+    "maquette": ">=3.0.0-alpha.11"
+  },
   "devDependencies": {
     "maquette": "3.0.0-alpha.11",
     "mocha": "4.0.1",
     "rollup": "0.50.0",
     "typescript-assistant": "0.23.2",
     "uglify-js": "3.1.5"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "html",
+      "text-summary"
+    ],
+    "require": "ts-node/register",
+    "cache": true,
+    "temp-directory": "./build/nyc/cache",
+    "all": false,
+    "check-coverage": false,
+    "report-dir": "./build/coverage",
+    "es-module": false,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "watermarks": {
+      "lines": [
+        75,
+        100
+      ],
+      "functions": [
+        75,
+        100
+      ],
+      "branches": [
+        75,
+        100
+      ],
+      "statements": [
+        75,
+        100
+      ]
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { enableJsx } from '../src';
 import Global = NodeJS.Global;
 import { expect } from './test-utilities';
+import { dom } from 'maquette';
 
 describe('maquette-jsx', () => {
   let globalScope: Global & { window?: any } = global;
@@ -40,5 +41,26 @@ describe('maquette-jsx', () => {
       text: undefined,
       vnodeSelector: 'a'
     });
+  });
+
+  it('creates fully functional VNodes from all valid types of JSX', () => {
+    enableJsx();
+    (global as any).jsx = window.jsx;
+    let vnode = <div>
+      <p>
+        text
+        more text
+      </p>
+      <br />
+      <br class="hello world" />
+      <div class="hello world"></div>
+      <a href="#">Click me</a>
+      <div classes={{special: true}} styles={{height: '100px'}}>
+        goodbye <br /> <i>cruel</i>
+        w<b>orl</b>d
+      </div>
+    </div>;
+    // TODO: add JSDom and compare innerHTML
+    //let DOMNode = dom.create(vnode);
   });
 });

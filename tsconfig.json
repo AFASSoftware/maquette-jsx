@@ -14,11 +14,13 @@
     "outDir": "./build/js",
     "rootDir": ".",
     "strictNullChecks": false,
-    "noEmit": true,
+//    "noEmit": true,
     "jsx": "react",
     "jsxFactory": "jsx"
   },
   "include": [
-    "./test/**/*.ts"
+    "./src/jsx-types.d.ts",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
   ]
 }

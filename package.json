@@ -35,6 +35,8 @@
     "maquette": ">=3.0.0-alpha.11"
   },
   "devDependencies": {
+    "jsdom": "11.3.0",
+    "jsdom-global": "3.0.2",
     "maquette": "3.0.0-alpha.11",
     "mocha": "4.0.1",
     "rollup": "0.50.0",

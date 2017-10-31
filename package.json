@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
   "peerDependencies": {
-    "maquette": ">=3.0.0-alpha.11"
+    "maquette": ">=2.5.4"
   },
   "devDependencies": {
     "@types/mocha": "2.2.44",

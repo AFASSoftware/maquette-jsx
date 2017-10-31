@@ -1,4 +1,4 @@
-import { enableJsx } from '../src';
+import { enableGlobalJsx } from '../src';
 import Global = NodeJS.Global;
 import { expect } from './test-utilities';
 import { VNode } from 'maquette';
@@ -19,12 +19,12 @@ describe('maquette-jsx', () => {
   });
 
   it('registers a jsx function on the global scope', () => {
-    enableJsx();
+    enableGlobalJsx();
     expect(window.jsx).to.be.a('function');
   });
 
   it('creates VNodes from jsx() calls', () => {
-    enableJsx();
+    enableGlobalJsx();
     let vnode = window.jsx('a', { href: '#' }, 'Click me');
     let expected: VNode = {
       vnodeSelector: 'a',

@@ -77,4 +77,49 @@ describe('maquette-jsx', () => {
     </div>
     `.replace(/\s*\n\s*/g, ''));
   });
+
+  it('mimics Reacts && behavior', () => {
+    enableGlobalJsx();
+    (global as any).jsx = window.jsx;
+    let unreadMessages = [];
+    let vnode = <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+      <h2>
+        You have {unreadMessages.length} unread messages.
+      </h2>
+      }
+    </div>;
+    expect(vnode.children).to.have.length(1);
+  });
+
+  it('mimics Reacts ? behavior', () => {
+    enableGlobalJsx();
+    (global as any).jsx = window.jsx;
+    let loading = false;
+    let title = 'title1';
+    let vnode = <div>
+      {
+        loading
+        ? <span>Loading...</span>
+        : [
+          (title
+              ? <div key='0'>{ title }</div>
+              : null
+          ),
+          <div key='1'>body</div>
+        ]
+      }
+    </div>;
+    expect(vnode.children).to.have.length(2);
+  });
+
+  it('creates a minimal number of nodes', () => {
+    enableGlobalJsx();
+    (global as any).jsx = window.jsx;
+    let vnode = <p>Text</p>;
+    expect(vnode.children).to.be.undefined;
+    expect(vnode.text).to.equal('Text');
+  });
+
 });

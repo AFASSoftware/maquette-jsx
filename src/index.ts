@@ -26,7 +26,7 @@ export let jsx = (tagName: string, properties: VNodeProperties | null, ...childr
         };
       }
       return child;
-    }),
+    }).filter(child => !!child),
     text: undefined,
     domNode: null
   };

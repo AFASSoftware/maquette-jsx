@@ -1,6 +1,6 @@
 {
   "name": "maquette-jsx",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A library to enable maquette to use jsx",
   "module": "./dist/maquette-jsx.js",
   "main": "./dist/maquette-jsx.cjs.js",

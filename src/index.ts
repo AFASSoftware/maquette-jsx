@@ -1,5 +1,5 @@
 /* tslint:disable no-shadowed-variable */
-import { VNode, VNodeProperties } from 'maquette';
+import { VNode, VNodeChild, VNodeProperties } from 'maquette';
 
 declare global {
   function jsx(tagName: string, properties: VNodeProperties | null, ...children: (VNode | string)[]): VNode;
@@ -11,22 +11,48 @@ declare global {
   }
 }
 
-export let jsx = (tagName: string, properties: VNodeProperties | null, ...children: (VNode | string)[]): VNode => {
+let toTextVNode = (data: any): VNode => {
+  return {
+    vnodeSelector: '',
+    properties: undefined,
+    children: undefined,
+    text: data.toString(),
+    domNode: null
+  };
+};
+
+let appendChildren = (insertions: any[], main: VNode[]) => {
+  for (let i = 0, length = insertions.length; i < length; i++) {
+    let item = insertions[i];
+    if (Array.isArray(item)) {
+      appendChildren(item, main);
+    } else {
+      if (item !== null && item !== undefined && item !== false) {
+        if (!item.hasOwnProperty('vnodeSelector')) {
+          item = toTextVNode(item);
+        }
+        main.push(item);
+      }
+    }
+  }
+};
+
+export let jsx = (tagName: string, properties: VNodeProperties | null, ...childNodes: VNodeChild[]): VNode => {
+  if (childNodes.length === 1 && typeof childNodes[0] === 'string') {
+    return {
+      vnodeSelector: tagName,
+      properties: properties || undefined,
+      children: undefined,
+      text: childNodes[0] as string,
+      domNode: null
+    };
+  }
+  let children: VNode[] = [];
+  appendChildren(childNodes, children);
   return {
     vnodeSelector: tagName,
     properties: properties || undefined,
-    children: children.map(child => {
-      if (typeof child === 'string') {
-        return {
-          vnodeSelector: '',
-          properties: undefined,
-          children: undefined,
-          text: child,
-          domNode: null
-        };
-      }
-      return child;
-    }).filter(child => !!child),
+    children: children,
     text: undefined,
     domNode: null
   };

@@ -28,20 +28,12 @@ describe('maquette-jsx', () => {
     let vnode = window.jsx('a', { href: '#' }, 'Click me');
     let expected: VNode = {
       vnodeSelector: 'a',
-      children: [
-        {
-          vnodeSelector: '',
-          properties: undefined,
-          children: undefined,
-          text: 'Click me',
-          domNode: null
-        }
-      ],
+      children: undefined,
       domNode: null,
       properties: {
         href: '#'
       },
-      text: undefined
+      text: 'Click me'
     };
     expect(vnode).to.deep.equal(expected);
   });

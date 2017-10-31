@@ -26,20 +26,12 @@ describe('maquette-jsx', () => {
     let vnode = <a href="#">Click me</a>;
 
     expect(vnode).to.deep.equal({
-      children: [
-        {
-          children: undefined,
-          domNode: null,
-          properties: undefined,
-          text: 'Click me',
-          vnodeSelector: '',
-        }
-      ],
+      children: undefined,
       domNode: null,
       properties: {
         href: '#'
       },
-      text: undefined,
+      text: 'Click me',
       vnodeSelector: 'a'
     });
   });

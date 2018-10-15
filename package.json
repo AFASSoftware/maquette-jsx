@@ -35,14 +35,14 @@
     "maquette": ">=2.5.4"
   },
   "devDependencies": {
-    "@types/mocha": "5.2.1",
-    "jsdom": "11.11.0",
+    "@types/mocha": "5.2.5",
+    "jsdom": "12.2.0",
     "jsdom-global": "3.0.2",
-    "maquette": "3.3.0",
+    "maquette": "3.3.1",
     "mocha": "5.2.0",
-    "rollup": "0.59.4",
-    "typescript-assistant": "0.32.0",
-    "uglify-js": "3.4.0"
+    "rollup": "0.66.6",
+    "typescript-assistant": "0.32.12",
+    "uglify-js": "3.4.9"
   },
   "nyc": {
     "include": [

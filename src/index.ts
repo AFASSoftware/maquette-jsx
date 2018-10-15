@@ -1,8 +1,11 @@
-/* tslint:disable no-shadowed-variable */
+/* tslint:disable no-shadowed-variable no-namespace */
 import { VNode, VNodeChild, VNodeProperties } from 'maquette';
 
 declare global {
   function jsx(tagName: string, properties: VNodeProperties | null, ...children: (VNode | string)[]): VNode;
+}
+
+export declare namespace jsx {
   namespace JSX {
     interface IntrinsicElements {
       [tagName: string]: VNodeProperties;

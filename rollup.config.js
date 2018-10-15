@@ -8,9 +8,9 @@ export default [
     input: 'dist/index.js',
     output: {
       file: pkg.browser,
-      format: 'umd'
+      format: 'umd',
+      name: 'maquetteCssTransitions'
     },
-    name: 'maquetteCssTransitions',
     plugins: []
   },
   // CommonJS build for nodeJS

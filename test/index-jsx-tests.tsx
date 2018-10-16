@@ -1,28 +1,12 @@
-import { enableGlobalJsx } from '../src';
-import Global = NodeJS.Global;
+import { jsx } from '../src';
 import { expect } from './test-utilities';
 import { dom } from 'maquette';
+
 require('jsdom-global/register');
 
 describe('maquette-jsx', () => {
-  let globalScope: Global & { window?: any } = global;
-
-  let window: any;
-
-  beforeEach(() => {
-    window = {};
-    globalScope.window = window;
-  });
-
-  afterEach(() => {
-    delete globalScope.window;
-    delete (global as any).jsx;
-  });
 
   it('creates VNodes from JSX code', () => {
-    enableGlobalJsx();
-    (global as any).jsx = window.jsx;
-
     let vnode = <a href="#">Click me</a>;
 
     expect(vnode).to.deep.equal({
@@ -37,8 +21,6 @@ describe('maquette-jsx', () => {
   });
 
   it('creates fully functional VNodes from all valid types of JSX', () => {
-    enableGlobalJsx();
-    (global as any).jsx = window.jsx;
     let vnode = <div>
       <p>
         text
@@ -71,8 +53,6 @@ describe('maquette-jsx', () => {
   });
 
   it('mimics Reacts && behavior', () => {
-    enableGlobalJsx();
-    (global as any).jsx = window.jsx;
     let unreadMessages = [];
     let vnode = <div>
       <h1>Hello!</h1>
@@ -86,8 +66,6 @@ describe('maquette-jsx', () => {
   });
 
   it('mimics Reacts ? behavior', () => {
-    enableGlobalJsx();
-    (global as any).jsx = window.jsx;
     let loading = false;
     let title = 'title1';
     let vnode = <div>
@@ -107,11 +85,8 @@ describe('maquette-jsx', () => {
   });
 
   it('creates a minimal number of nodes', () => {
-    enableGlobalJsx();
-    (global as any).jsx = window.jsx;
     let vnode = <p>Text</p>;
     expect(vnode.children).to.be.undefined;
     expect(vnode.text).to.equal('Text');
   });
-
 });

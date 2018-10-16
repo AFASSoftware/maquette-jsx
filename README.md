@@ -19,7 +19,7 @@ let render = () => {
   - `"jsxFactory": "jsx"`
 - When using babel:  Add the following plugin:
   - `"plugins": [ ["transform-react-jsx", {"pragma": "jsx"}] ]`
-- Call maquette-jsx's `enableGlobalJsx` function before calling maquette's `createProjector()`
+  - Call maquette-jsx's `enableGlobalJsx` function before calling maquette's `createProjector()`
 - You can now return JSX from your `render` functions
 
 ## Example

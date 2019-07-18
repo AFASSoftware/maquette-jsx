@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
   "peerDependencies": {
-    "maquette": ">=2.5.4"
+    "maquette": ">=3.3.4"
   },
   "devDependencies": {
     "@types/mocha": "5.2.7",
@@ -36,8 +36,8 @@
     "jsdom-global": "3.0.2",
     "maquette": "3.3.4",
     "mocha": "6.1.4",
-    "rollup": "1.14.0",
-    "typescript-assistant": "0.39.6",
+    "rollup": "1.17.0",
+    "typescript-assistant": "0.40.1",
     "uglify-js": "3.6.0"
   },
   "nyc": {

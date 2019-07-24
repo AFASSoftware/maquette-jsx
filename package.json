@@ -2,10 +2,10 @@
   "name": "maquette-jsx",
   "version": "3.0.0",
   "description": "A library to enable maquette to use jsx",
-  "module": "./dist/maquette-jsx.js",
+  "module": "./dist/index.js",
   "main": "./dist/maquette-jsx.cjs.js",
   "browser": "./dist/maquette-jsx.umd.js",
-  "typings": "./dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "tsa clean && npm -s run dist",
     "assist": "tsa assist",

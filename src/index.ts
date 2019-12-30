@@ -46,7 +46,7 @@ export let jsx = (tagName: string, properties: VNodeProperties | null, ...childN
       vnodeSelector: tagName,
       properties: properties || undefined,
       children: undefined,
-      text: childNodes[0] as string,
+      text: childNodes[0],
       domNode: null
     };
   }

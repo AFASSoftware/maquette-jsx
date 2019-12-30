@@ -32,13 +32,13 @@
   },
   "devDependencies": {
     "@types/mocha": "5.2.7",
-    "jsdom": "15.1.1",
+    "jsdom": "15.2.1",
     "jsdom-global": "3.0.2",
     "maquette": "3.3.4",
-    "mocha": "6.1.4",
-    "rollup": "1.17.0",
-    "typescript-assistant": "0.40.1",
-    "uglify-js": "3.6.0"
+    "mocha": "6.2.2",
+    "rollup": "1.27.14",
+    "typescript-assistant": "0.40.12",
+    "uglify-js": "3.7.3"
   },
   "nyc": {
     "include": [

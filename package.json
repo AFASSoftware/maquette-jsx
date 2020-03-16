@@ -37,7 +37,7 @@
     "maquette": "3.3.4",
     "mocha": "6.2.2",
     "rollup": "1.27.14",
-    "typescript-assistant": "0.40.12",
+    "typescript-assistant": "^0.40.19",
     "uglify-js": "3.7.3"
   },
   "nyc": {

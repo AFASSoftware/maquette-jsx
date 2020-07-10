@@ -28,17 +28,17 @@
   },
   "homepage": "https://github.com/AFASSoftware/maquette-jsx#readme",
   "peerDependencies": {
-    "maquette": ">=3.3.4"
+    "maquette": ">=3.3.7"
   },
   "devDependencies": {
-    "@types/mocha": "5.2.7",
-    "jsdom": "15.2.1",
+    "@types/mocha": "7.0.2",
+    "jsdom": "16.3.0",
     "jsdom-global": "3.0.2",
     "maquette": "3.3.4",
-    "mocha": "6.2.2",
-    "rollup": "1.27.14",
-    "typescript-assistant": "^0.40.19",
-    "uglify-js": "3.7.3"
+    "mocha": "8.0.1",
+    "rollup": "2.21.0",
+    "typescript-assistant": "^0.40.21",
+    "uglify-js": "3.10.0"
   },
   "nyc": {
     "include": [

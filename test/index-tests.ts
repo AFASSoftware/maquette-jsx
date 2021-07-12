@@ -1,9 +1,11 @@
-import { enableGlobalJsx } from '../src';
-import Global = NodeJS.Global;
-import { expect } from './test-utilities';
-import { VNode } from 'maquette';
+import { VNode } from "maquette";
 
-describe('maquette-jsx', () => {
+import { enableGlobalJsx } from "../src";
+import { expect } from "./test-utilities";
+
+import Global = NodeJS.Global;
+
+describe("maquette-jsx", () => {
   let globalScope: Global & { window?: any } = global;
 
   let window: any;
@@ -18,22 +20,22 @@ describe('maquette-jsx', () => {
     delete (global as any).jsx;
   });
 
-  it('registers a jsx function on the global scope', () => {
+  it("registers a jsx function on the global scope", () => {
     enableGlobalJsx();
-    expect(window.jsx).to.be.a('function');
+    expect(window.jsx).to.be.a("function");
   });
 
-  it('creates VNodes from jsx() calls', () => {
+  it("creates VNodes from jsx() calls", () => {
     enableGlobalJsx();
-    let vnode = window.jsx('a', { href: '#' }, 'Click me');
+    let vnode = window.jsx("a", { href: "#" }, "Click me");
     let expected: VNode = {
-      vnodeSelector: 'a',
+      vnodeSelector: "a",
       children: undefined,
       domNode: null,
       properties: {
-        href: '#'
+        href: "#",
       },
-      text: 'Click me'
+      text: "Click me",
     };
     expect(vnode).to.deep.equal(expected);
   });

@@ -1,8 +1,12 @@
-/* tslint:disable no-shadowed-variable no-namespace */
-import { VNode, VNodeChild, VNodeProperties } from 'maquette';
+/* eslint-disable @typescript-eslint/no-namespace */
+import { VNode, VNodeChild, VNodeProperties } from "maquette";
 
 declare global {
-  function jsx(tagName: string, properties: VNodeProperties | null, ...children: (VNode | string)[]): VNode;
+  function jsx(
+    tagName: string,
+    properties: VNodeProperties | null,
+    ...children: (VNode | string)[]
+  ): VNode;
 }
 
 export declare namespace jsx {
@@ -16,11 +20,11 @@ export declare namespace jsx {
 
 let toTextVNode = (data: any): VNode => {
   return {
-    vnodeSelector: '',
+    vnodeSelector: "",
     properties: undefined,
     children: undefined,
     text: data.toString(),
-    domNode: null
+    domNode: null,
   };
 };
 
@@ -31,7 +35,7 @@ let appendChildren = (insertions: any[], main: VNode[]) => {
       appendChildren(item, main);
     } else {
       if (item !== null && item !== undefined && item !== false) {
-        if (!item.hasOwnProperty('vnodeSelector')) {
+        if (!item.hasOwnProperty("vnodeSelector")) {
           item = toTextVNode(item);
         }
         main.push(item);
@@ -40,14 +44,18 @@ let appendChildren = (insertions: any[], main: VNode[]) => {
   }
 };
 
-export let jsx = (tagName: string, properties: VNodeProperties | null, ...childNodes: VNodeChild[]): VNode => {
-  if (childNodes.length === 1 && typeof childNodes[0] === 'string') {
+export let jsx = (
+  tagName: string,
+  properties: VNodeProperties | null,
+  ...childNodes: VNodeChild[]
+): VNode => {
+  if (childNodes.length === 1 && typeof childNodes[0] === "string") {
     return {
       vnodeSelector: tagName,
       properties: properties || undefined,
       children: undefined,
       text: childNodes[0],
-      domNode: null
+      domNode: null,
     };
   }
   let children: VNode[] = [];
@@ -57,13 +65,13 @@ export let jsx = (tagName: string, properties: VNodeProperties | null, ...childN
     properties: properties || undefined,
     children: children,
     text: undefined,
-    domNode: null
+    domNode: null,
   };
 };
 
 /**
  * Call this function before executing any JSX formatted code. This function makes the window.jsx function available.
  */
-export let enableGlobalJsx = () => {
+export let enableGlobalJsx = (): void => {
   (window as any).jsx = jsx;
 };

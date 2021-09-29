@@ -7,6 +7,7 @@
   "browser": "./dist/maquette-jsx.umd.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "prepare": "husky install",
     "prepublishOnly": "tsa clean && npm -s run dist",
     "assist": "tsa assist",
     "release": "tsa release",
@@ -32,15 +33,15 @@
     "maquette": ">=3.3.7"
   },
   "devDependencies": {
-    "@types/mocha": "8.2.3",
-    "@types/node": "16.3.1",
-    "jsdom": "16.6.0",
+    "@types/mocha": "9.0.0",
+    "@types/node": "16.10.1",
+    "jsdom": "17.0.0",
     "jsdom-global": "3.0.2",
-    "maquette": "3.5.0",
-    "mocha": "9.0.2",
-    "rollup": "2.53.1",
-    "typescript-assistant": "^0.51.0",
-    "uglify-js": "3.13.10"
+    "maquette": "3.5.1",
+    "mocha": "9.1.2",
+    "rollup": "2.57.0",
+    "typescript-assistant": "0.53.0",
+    "uglify-js": "3.14.2"
   },
   "nyc": {
     "include": [
@@ -85,14 +86,6 @@
         75,
         100
       ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "post-checkout": "tsa post-checkout || exit 0",
-      "post-merge": "tsa post-merge || exit 0",
-      "pre-commit": "tsa pre-commit",
-      "pre-push": "npm run dist && tsa pre-push"
     }
   },
   "importSort": {

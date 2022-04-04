@@ -33,15 +33,15 @@
     "maquette": ">=3.5.1"
   },
   "devDependencies": {
-    "@types/mocha": "9.0.0",
-    "@types/node": "17.0.5",
+    "@types/mocha": "9.1.0",
+    "@types/node": "17.0.23",
     "jsdom": "19.0.0",
     "jsdom-global": "3.0.2",
-    "maquette": "3.5.1",
-    "mocha": "9.1.3",
-    "rollup": "2.62.0",
-    "typescript-assistant": "0.55.0",
-    "uglify-js": "3.14.5"
+    "maquette": "3.5.2",
+    "mocha": "9.2.2",
+    "rollup": "2.70.1",
+    "typescript-assistant": "0.55.8",
+    "uglify-js": "3.15.3"
   },
   "nyc": {
     "include": [
